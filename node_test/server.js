@@ -11,3 +11,18 @@ const PORT = process.env.PORT
 console.log(HOST)
 console.log(PORT)
 
+//Webサーバ作成
+const app = express()
+
+// ルーティング（URLマッピング）
+// トップページにGETリクエストされたとき処理
+app.get('/', (req, res) => {
+    // クライアンのからのリクエスト
+    console.log(req.body)
+    console.log(req.url)
+    console.log(req.query)
+
+    // サーバーからのレスポンス
+    res.send('Hello!!!!')
+})
+
