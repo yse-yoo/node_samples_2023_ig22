@@ -22,7 +22,7 @@ router.get('/profile', (req, res) => {
 router.get('/item/:id', (req, res) => {
     const id = req.params.id
     var selectItem = item.find(id)
-    var message = selectItem.name
+    var message = "商品名:" + selectItem.name
     res.send(message)
 })
 
