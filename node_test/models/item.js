@@ -1,3 +1,4 @@
+// ターミナルで「npm i fs」でインストール
 const fs = require('fs');
 const values = JSON.parse(fs.readFileSync('./data/items.json', 'utf8'));
 
