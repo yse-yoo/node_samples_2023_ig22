@@ -16,7 +16,7 @@ const app = express()
 // staticコンテンツの設定
 // Middlewareの利用
 // publicフォルダをWebルートとしてブラウザからアクセスできるようにする
-app.use(express.static(__dirname + 'public/'))
+app.use(express.static(__dirname + '/public'))
 
 // ルーティング（URLマッピング）
 // トップページにGETリクエストされたとき処理
