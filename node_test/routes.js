@@ -16,7 +16,7 @@ router.get('/profile', (req, res) => {
     res.send('プロフィールページ')
 })
 
-// 商品IDから商品取得（「id」をプレースホルダー）
+// 商品IDから商品取得(URLパラメータ)（「id」をプレースホルダー）
 router.get('/item/:id', (req, res) => {
     const id = req.params.id
     var message = "Item ID is " + id
