@@ -13,10 +13,13 @@ const PORT = process.env.PORT
 //Webサーバ作成
 const app = express()
 
-// staticコンテンツの設定
 // Middlewareの利用
+// staticコンテンツの設定
 // publicフォルダをWebルートとしてブラウザからアクセスできるようにする
 app.use(express.static(__dirname + '/public'))
+
+// URLエンコード（マルチバイト文字の対策）
+app.use(express.urlencoded({ extended: true }))
 
 // ルーティング（URLマッピング）
 // トップページにGETリクエストされたとき処理
@@ -33,6 +36,17 @@ app.get('/', (req, res) => {
 
 app.get('/profile', (req, res) => {
     res.send('プロフィールページ')
+})
+
+// ログイン認証（POST）
+app.post('/auth', (req, res) => {
+    var loginName = req.body.login_name
+    var password = req.body.password
+
+    console.log(loginName)
+    console.log(password)
+
+    res.send('ログイン')
 })
 
 // サーバー待機（たいき） wait 
