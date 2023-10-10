@@ -43,10 +43,15 @@ app.post('/auth', (req, res) => {
     var loginName = req.body.login_name
     var password = req.body.password
 
+    var message = "ログインできませんでした"
+    if (loginName == process.env.LOGIN_NAME
+        && password == process.env.PASSWORD) {
+            message = "ログインできました"
+        }
     console.log(loginName)
     console.log(password)
 
-    res.send('ログイン')
+    res.send(message)
 })
 
 // サーバー待機（たいき） wait 
