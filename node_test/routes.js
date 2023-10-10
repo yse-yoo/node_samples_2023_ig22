@@ -16,6 +16,14 @@ router.get('/profile', (req, res) => {
     res.send('プロフィールページ')
 })
 
+// 商品IDから商品取得（「id」をプレースホルダー）
+router.get('/item/:id', (req, res) => {
+    const id = req.params.id
+    var message = "Item ID is " + id
+
+    res.send(message)
+})
+
 // ログイン認証（POST）
 router.post('/auth', (req, res) => {
     var loginName = req.body.login_name
