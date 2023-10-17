@@ -34,6 +34,7 @@ router.get('/profile', (req, res) => {
 
 // 商品一覧（しょうひんいちらん）
 router.get('/item/', (req, res) => {
+    //データをすべて取得
     var data = { 
         items: item.get() 
     }
