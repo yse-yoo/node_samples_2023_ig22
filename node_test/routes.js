@@ -25,7 +25,7 @@ router.get('/profile', (req, res) => {
         hobby: ['旅行', 'グルメ', 'スポーツ'],
     }
     var data = {
-        tilte: 'プロフィール',
+        title: 'プロフィール',
         user: user,
     }
     // views/profile.ejs に dataを渡して表示
