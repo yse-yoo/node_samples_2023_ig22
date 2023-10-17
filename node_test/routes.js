@@ -16,7 +16,20 @@ router.get('/', (req, res) => {
 })
 
 router.get('/profile', (req, res) => {
-    res.send('プロフィールページ')
+    // res.send('プロフィールページ')
+    // TODO: データベースからユーザ情報を取得
+    var user = {
+        id: 1,
+        name: "YSE",
+        birthplace: "横浜",
+        hobby: ['旅行', 'グルメ', 'スポーツ'],
+    }
+    var data = {
+        tilte: 'プロフィール',
+        user: user,
+    }
+    // views/profile.ejs に dataを渡して表示
+    res.render('profile', data)
 })
 
 // 商品IDから商品取得(URLパラメータ)（「id」をプレースホルダー）
