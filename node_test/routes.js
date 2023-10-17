@@ -35,9 +35,12 @@ router.get('/profile', (req, res) => {
 // 商品IDから商品取得(URLパラメータ)（「id」をプレースホルダー）
 router.get('/item/:id', (req, res) => {
     const id = req.params.id
-    var selectItem = item.find(id)
-    var message = "商品名:" + selectItem.name
-    res.send(message)
+    // データを検索して用意
+    var data = { 
+        item: item.find(id) 
+    }
+    // views/item/detail.ejs に dataを渡して表示
+    res.render('item/detail', data)
 })
 
 // ログイン認証（POST）
