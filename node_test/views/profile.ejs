@@ -13,6 +13,13 @@
             <dd><%= user.name %></dd>
             <dt>Birth Place</dt>
             <dd><%= user.birthplace %></dd>
+            <dt>Hobby</dt>
+            <!-- hobbyデータの繰り返し -->
+            <dd>
+                <% user.hobby.forEach((value) => { %>
+                    <%= value %>
+                <% }) %>
+            </dd>
         </dl>
     </div>
 </body>
