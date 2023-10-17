@@ -10,8 +10,9 @@ router.get('/', (req, res) => {
     console.log(req.body)
     console.log(req.url)
     console.log(req.query)
-
-    res.send('トップページ')
+    // res.send('トップページ')
+    //views/index.ejsを表示
+    res.render('index')
 })
 
 router.get('/profile', (req, res) => {
