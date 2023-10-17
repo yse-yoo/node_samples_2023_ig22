@@ -32,7 +32,17 @@ router.get('/profile', (req, res) => {
     res.render('profile', data)
 })
 
-// 商品IDから商品取得(URLパラメータ)（「id」をプレースホルダー）
+// 商品一覧（しょうひんいちらん）
+router.get('/item/', (req, res) => {
+    var data = { 
+        items: item.get() 
+    }
+    // views/item/index.ejs に dataを渡して表示
+    res.render('item/index', data)
+})
+
+
+// 商品詳細（しょうひんしょうさい）
 router.get('/item/:id', (req, res) => {
     const id = req.params.id
     // データを検索して用意
