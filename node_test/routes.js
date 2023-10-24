@@ -6,15 +6,11 @@ const item = require('./models/item')
 // Routerの利用
 const router = express.Router()
 
+// controllers/HomeControllerモジュール読み込み
+const HomeController = require('./controllers/HomeController')
 // トップページ
-router.get('/', (req, res) => {
-    console.log(req.body)
-    console.log(req.url)
-    console.log(req.query)
-    // res.send('トップページ')
-    //views/index.ejsを表示
-    res.render('index')
-})
+// HomeController の index() を実行
+router.get('/', HomeController.index)
 
 // ログイン
 router.get('/login', (req, res) => {
