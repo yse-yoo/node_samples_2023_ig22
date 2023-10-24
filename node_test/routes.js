@@ -16,6 +16,12 @@ router.get('/', (req, res) => {
     res.render('index')
 })
 
+// ログイン
+router.get('/login', (req, res) => {
+    // views/login/index.ejs
+    res.render('login/index')
+})
+
 router.get('/profile', (req, res) => {
     // res.send('プロフィールページ')
     // TODO: データベースからユーザ情報を取得
