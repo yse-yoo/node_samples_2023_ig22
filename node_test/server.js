@@ -27,8 +27,10 @@ app.set('view engine', 'ejs')
 
 //レイアウトの設定
 const layouts = require('express-ejs-layouts');
+// views/layouts/default.ejs 使う
 app.set('layout', 'layouts/default');
 app.set('view engine', 'ejs');
+// Middlewareに登録
 app.use(layouts);
 
 // Routerの利用

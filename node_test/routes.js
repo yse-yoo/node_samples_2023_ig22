@@ -6,6 +6,7 @@ const item = require('./models/item')
 // Routerの利用
 const router = express.Router()
 
+// トップページ
 router.get('/', (req, res) => {
     console.log(req.body)
     console.log(req.url)
