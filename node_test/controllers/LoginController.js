@@ -31,6 +31,5 @@ exports.auth = (req, res) => {
     // }
     // console.log(loginName)
     // console.log(password)
-
-    res.send(message)
+    // res.send(message)
 }
