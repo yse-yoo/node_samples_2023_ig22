@@ -1,13 +1,7 @@
-// ターミナルで「npm i fs」でインストール
-const fs = require('fs');
-const values = JSON.parse(fs.readFileSync('./data/items.json', 'utf8'));
+//共通モデルモジュールを読み込み
+const model = require('./model');
 
-// すべてのデータ取得
-exports.get = () => {
-    return values
-}
+// JSONファイルのパス
+model.dataFile = "./data/items.json"
 
-// IDからデータ取得
-exports.find = (id) => {
-    return values.find((value) => value.id == id)
-}
+module.exports = model
