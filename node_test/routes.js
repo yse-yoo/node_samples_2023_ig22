@@ -6,20 +6,17 @@ const item = require('./models/item')
 // Routerの利用
 const router = express.Router()
 
-// controllers/HomeControllerモジュール読み込み
+// controllersモジュール読み込み
 const HomeController = require('./controllers/HomeController')
-// トップページ
-// HomeController の index() を実行
+const LoginController = require('./controllers/LoginController')
+
+// HomeController
 router.get('/', HomeController.index)
-// HomeController の profile() を実行
 router.get('/profile', HomeController.profile)
 
-// ログイン
-router.get('/login', (req, res) => {
-    // views/login/index.ejs
-    res.render('login/index')
-})
-
+// LoginController
+router.get('/login', LoginController.index)
+router.post('/auth', LoginController.auth)
 
 // 商品一覧（しょうひんいちらん）
 router.get('/item/', (req, res) => {
@@ -43,20 +40,5 @@ router.get('/item/:id', (req, res) => {
     res.render('item/detail', data)
 })
 
-// ログイン認証（POST）
-router.post('/auth', (req, res) => {
-    var loginName = req.body.login_name
-    var password = req.body.password
-
-    var message = "ログインできませんでした"
-    if (loginName == process.env.LOGIN_NAME
-        && password == process.env.PASSWORD) {
-        message = "ログインできました"
-    }
-    console.log(loginName)
-    console.log(password)
-
-    res.send(message)
-})
 
 module.exports = router
