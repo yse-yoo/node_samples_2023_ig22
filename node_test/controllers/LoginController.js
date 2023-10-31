@@ -13,9 +13,12 @@ exports.auth = (req, res) => {
     var password = req.body.password
 
     var authUser = user.auth(email, password);
-    console.log(authUser)
+    // console.log(authUser)
     if (authUser) {
-        // 認証が成功したら、ユーザトップにリダイレクト
+        // 認証が成功したらユーザ情報をセッションに保存
+        req.session.authUser = authUser
+
+        //ユーザトップにリダイレクト
         res.redirect('/user')
     } else {
         // 認証が失敗したら、ログインにリダイレクト
