@@ -11,6 +11,8 @@ const HomeController = require('./controllers/HomeController')
 // トップページ
 // HomeController の index() を実行
 router.get('/', HomeController.index)
+// HomeController の profile() を実行
+router.get('/profile', HomeController.profile)
 
 // ログイン
 router.get('/login', (req, res) => {
@@ -18,22 +20,6 @@ router.get('/login', (req, res) => {
     res.render('login/index')
 })
 
-router.get('/profile', (req, res) => {
-    // res.send('プロフィールページ')
-    // TODO: データベースからユーザ情報を取得
-    var user = {
-        id: 1,
-        name: "YSE",
-        birthplace: "横浜",
-        hobby: ['旅行', 'グルメ', 'スポーツ'],
-    }
-    var data = {
-        title: 'プロフィール',
-        user: user,
-    }
-    // views/profile.ejs に dataを渡して表示
-    res.render('profile', data)
-})
 
 // 商品一覧（しょうひんいちらん）
 router.get('/item/', (req, res) => {
