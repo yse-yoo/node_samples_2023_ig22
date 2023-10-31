@@ -14,9 +14,12 @@ exports.auth = (req, res) => {
 
     var authUser = user.auth(email, password);
     console.log(authUser)
-    var message = "ログイン失敗..."
     if (authUser) {
-        message = "ログイン成功！"
+        // 認証が成功したら、ユーザトップにリダイレクト
+        res.redirect('/user')
+    } else {
+        // 認証が失敗したら、ログインにリダイレクト
+        res.redirect('/login')
     }
 
     // var loginName = req.body.login_name
