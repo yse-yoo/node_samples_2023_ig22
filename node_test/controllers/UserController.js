@@ -7,8 +7,12 @@ exports.index = (req, res) => {
         //ユーザがいなければ、ログインページにリダイレクト
         res.redirect('/login')
     }
+    //受け渡すデータを用意
+    var data = {
+        user: authUser
+    }
     // views/user/index.ejs を表示
-    res.render('user/index')
+    res.render('user/index', data)
 }
 
 exports.logout = (req, res) => {
