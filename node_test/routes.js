@@ -24,5 +24,6 @@ router.get('/item/:id', ItemController.detail)
 
 // UserController
 router.get('/user/', UserController.index)
+router.get('/user/logout', UserController.logout)
 
 module.exports = router
