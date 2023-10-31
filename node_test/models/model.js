@@ -1,3 +1,5 @@
+// ORM（ORマッピング）
+
 const fs = require('fs');
 
 // JSONファイルのパス
