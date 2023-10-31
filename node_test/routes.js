@@ -8,6 +8,7 @@ const router = express.Router()
 const HomeController = require('./controllers/HomeController')
 const LoginController = require('./controllers/LoginController')
 const ItemController = require('./controllers/ItemController')
+const UserController = require('./controllers/UserController')
 
 // HomeController
 router.get('/', HomeController.index)
@@ -20,5 +21,8 @@ router.post('/auth', LoginController.auth)
 // ItemController
 router.get('/item/', ItemController.index)
 router.get('/item/:id', ItemController.detail)
+
+// UserController
+router.get('/user/', UserController.index)
 
 module.exports = router
