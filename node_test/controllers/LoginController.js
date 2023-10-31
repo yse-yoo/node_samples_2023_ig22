@@ -1,3 +1,4 @@
+const user = require('../models/user')
 
 // ログイントップ
 exports.index =  (req, res) => {
@@ -11,12 +12,15 @@ exports.auth = (req, res) => {
     var password = req.body.password
 
     var message = "ログイン失敗..."
-    if (loginName == process.env.LOGIN_NAME
-        && password == process.env.PASSWORD) {
-        message = "ログイン成功！"
-    }
-    console.log(loginName)
-    console.log(password)
+    var authUser = user.auth(loginName, password);
+    console.log(authUser)
+    // if (loginName == process.env.LOGIN_NAME
+    //     && password == process.env.PASSWORD) {
+    //     message = "ログイン成功！"
+    // }
+    // console.log(loginName)
+    // console.log(password)
+
 
     res.send(message)
 }

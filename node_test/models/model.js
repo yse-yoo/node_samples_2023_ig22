@@ -3,14 +3,19 @@
 const fs = require('fs');
 
 // JSONファイルのパス
-exports.dataFile = "";
+var dataFile = "";
+
+exports.init = (file) => {
+    dataFile = file;
+}
 
 /**
  * データをすべて取得
  * @returns array
  */
 exports.get = () => {
-    var values = JSON.parse(fs.readFileSync(this.dataFile, 'utf8'));
+    console.log(dataFile)
+    var values = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
     return values;
 }
 
