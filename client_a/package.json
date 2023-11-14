@@ -1,23 +1,17 @@
 {
-  "name": "node_test",
+  "name": "client_a",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server",
+    "dev": "node main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "ejs": "^3.1.6",
-    "express": "^4.18.2",
-    "express-ejs-layouts": "^2.5.1",
-    "express-session": "^1.17.3",
     "fs": "^0.0.1-security",
-    "mysql2": "^3.6.3",
     "nodemon": "^3.0.1"
   }
 }
