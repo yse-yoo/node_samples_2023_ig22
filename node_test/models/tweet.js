@@ -8,3 +8,11 @@ exports.get = async () => {
     con.end();
     return rows;
 }
+
+exports.getByUseId = async (user_id) => {
+    var sql = `SELECT * FROM tweets WHERE user_id = ${user_id};`;
+    const con = await mysql.createConnection(db.info);
+    const [rows, fields] = await con.query(sql);
+    con.end();
+    return rows;
+}

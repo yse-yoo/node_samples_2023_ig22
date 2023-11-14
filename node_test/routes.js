@@ -29,5 +29,6 @@ router.get('/user/logout', UserController.logout)
 
 // ApiController
 router.get('/api/tweets', ApiController.tweets)
+router.get('/api/user/tweets/:user_id', ApiController.userTweets)
 
 module.exports = router
