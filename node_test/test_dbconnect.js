@@ -15,9 +15,12 @@ console.log("Database Info", db_info)
 //DB接続
 const con = mysql.createConnection(db_info)
 con.connect((error) => {
-    //エラーの場合
-    if (error) throw error;
-    //成功の場合
-    console.log("DB Connect!!!");
+    if (error) {
+        //エラーの場合
+        console.log('DB Error!!!')
+    } else {
+        //成功の場合
+        console.log("DB Connect!!!");
+    }
 })
 con.end();
