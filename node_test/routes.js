@@ -9,6 +9,7 @@ const HomeController = require('./controllers/HomeController')
 const LoginController = require('./controllers/LoginController')
 const ItemController = require('./controllers/ItemController')
 const UserController = require('./controllers/UserController')
+const ApiController = require('./controllers/ApiController')
 
 // HomeController
 router.get('/', HomeController.index)
@@ -25,5 +26,8 @@ router.get('/item/:id', ItemController.detail)
 // UserController
 router.get('/user/', UserController.index)
 router.get('/user/logout', UserController.logout)
+
+// ApiController
+router.get('/api/tweets', ApiController.tweets)
 
 module.exports = router
